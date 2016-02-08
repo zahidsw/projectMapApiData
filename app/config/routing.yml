@@ -1,0 +1,12 @@
+api_map:
+    resource: "@ApiMapBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    
+    
+get_api_data:
+    path:     /getapi    
+    defaults: { _controller:app.get_controller:getapiAction}

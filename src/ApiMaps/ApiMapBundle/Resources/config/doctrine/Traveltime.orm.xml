@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ApiMaps\ApiMapBundle\Entity\Traveltime" table="traveltime">
+    <indexes>
+      <index name="idx_1bafa00f1e6bea1d" columns="ref_map_path"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="traveltime" type="smallint" column="traveltime" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="noobjs" type="smallint" column="noobjs" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="ondate" type="datetime" column="ondate" nullable="true"/>
+    <many-to-one field="refMapPath" target-entity="Mappaths" fetch="LAZY">
+      <join-columns>
+        <join-column name="ref_map_path" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

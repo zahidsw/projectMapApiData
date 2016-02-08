@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ApiMaps\ApiMapBundle\Entity\Mappaths" table="mappaths">
+    <indexes>
+      <index name="idx_45b7519fa3995845" columns="ref_unitids1"/>
+      <index name="idx_45b7519f3a9009ff" columns="ref_unitids2"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="normalvalue" type="smallint" column="normalvalue" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="refUnitids2" target-entity="Unitids" fetch="LAZY">
+      <join-columns>
+        <join-column name="ref_unitids2" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="refUnitids1" target-entity="Unitids" fetch="LAZY">
+      <join-columns>
+        <join-column name="ref_unitids1" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+{
+    "name": "vendor/project-map-api-data",
+    "description": "Description of project ProjectMapApiData.",
+    "authors": [
+        {
+            "name": "mos",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {}
+}
